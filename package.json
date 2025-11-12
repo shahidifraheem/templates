@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.16",
+    "tailwindcss": "^4.1.16"
+  },
+  "scripts": {
+    "hf-template1" : "npx @tailwindcss/cli -i ./headers-footers/template1/assets/tailwind/tailwind.css -o ./headers-footers/template1/assets/css/style.css --watch",
+    "hf-template2" : "npx @tailwindcss/cli -i ./headers-footers/template2/assets/tailwind/tailwind.css -o ./headers-footers/template2/assets/css/style.css --watch",
+    "hf-template3" : "npx @tailwindcss/cli -i ./headers-footers/template3/assets/tailwind/tailwind.css -o ./headers-footers/template3/assets/css/style.css --watch",
+    "hf-template4" : "npx @tailwindcss/cli -i ./headers-footers/template4/assets/tailwind/tailwind.css -o ./headers-footers/template4/assets/css/style.css --watch"
+  }
+}

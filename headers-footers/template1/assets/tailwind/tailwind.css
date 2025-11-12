@@ -1,0 +1,269 @@
+@import "tailwindcss/theme";
+@import "tailwindcss/utilities";
+
+:root {
+  --cs-primary-color: #EAA64D;
+  --cs-secondary-color: #C78A3B;
+  --cs-white-color: #ffffff;
+  --cs-dark-color: #000000;
+}
+
+.cs-site-header {
+  @apply px-2.5 py-2.5 md:py-5 backdrop-blur-sm fixed top-0 left-0 right-0 shadow-lg;
+}
+
+.cs-site-header *,
+.cs-site-footer *,
+.cs-mobile-sidebar * {
+  font-family: "Poppins", sans-serif;
+}
+
+.cs-site-header button,
+.cs-site-footer button,
+.cs-mobile-sidebar button {
+  @apply bg-transparent outline-none border-none cursor-pointer;
+}
+
+.cs-site-header a,
+.cs-site-footer a,
+.cs-mobile-sidebar a {
+  color: var(--cs-dark-color);
+  @apply block font-normal no-underline text-lg hover:text-[var(--cs-primary-color)] transition;
+}
+
+.cs-wrapper {
+  @apply w-full max-w-[1400px] mx-auto;
+}
+
+.cs-wrapper-content {
+  @apply flex items-center justify-between md:justify-start gap-10;
+}
+
+.cs-navbar {
+  @apply lg:block hidden;
+}
+
+.cs-toggle-sidebar {
+  @apply block lg:hidden;
+}
+
+.cs-navbar ul {
+  @apply list-none;
+}
+
+.cs-navbar > ul {
+  @apply flex items-center gap-5;
+}
+
+.cs-navbar a {
+  @apply block grow;
+}
+
+.cs-navbar li.active > a {
+  color: var(--cs-primary-color);
+}
+
+.cs-navbar li {
+  @apply relative flex items-center justify-between;
+}
+
+.cs-navbar li:hover > a{
+  color: var(--cs-primary-color);
+}
+
+.cs-navbar button{
+  @apply flex justify-center items-center 
+}
+
+.cs-navbar li svg{
+  @apply w-6 h-6 mr-2 
+}
+
+.sub-menu li svg{
+  @apply -rotate-90
+}
+
+.cs-navbar .sub-menu {
+  background-color: var(--cs-white-color);
+  @apply absolute top-10 left-0 w-56 invisible opacity-0 transition-all shadow-lg;
+}
+
+.cs-navbar .sub-menu .sub-menu{
+  @apply left-full top-0
+}
+
+.cs-navbar li:hover > .sub-menu {
+  @apply visible opacity-100;
+}
+
+.cs-navbar .sub-menu a {
+  @apply px-5 py-2.5;
+}
+
+.cs-navbar .sub-menu a:after {
+  @apply hidden;
+}
+
+.cs-mobile-sidebar {
+  background-color: rgba(0, 0, 0, 0.5);
+  @apply -translate-x-full fixed top-0 left-0 bottom-0 right-0 z-50 w-full transition-all duration-300;
+}
+
+.cs-mobile-sidebar.active{
+  @apply translate-x-0;
+}
+
+.cs-sidebar-wrapper {
+  background-color: var(--cs-white-color);
+  @apply absolute top-0 left-0 bottom-0 z-50 w-[300px] overflow-x-hidden overflow-y-auto;
+}
+
+.cs-sidebar-close {
+  background-color: var(--cs-primary-color) !important;
+  @apply absolute top-0 left-[300px] py-2 px-2.5  z-10;
+}
+
+.cs-sidebar-logo {
+  @apply px-2.5 py-5;
+}
+
+.cs-sidebar-logo img {
+  @apply h-24 object-contain object-left;
+}
+
+.cs-sidebar-nav a {
+  @apply px-5 py-2.5 w-[260px];
+}
+
+.cs-sidebar-nav li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  @apply relative
+}
+
+.cs-sidebar-nav button{
+  @apply absolute top-0 right-0 z-10 w-10 h-12 flex justify-center items-center transition-all
+}
+
+.cs-mobile-sidebar li:hover > a, .cs-mobile-sidebar li.active > a {
+  background-color: var(--cs-primary-color);
+  color: var(--cs-white-color);
+}
+
+.cs-mobile-sidebar li button svg{
+  @apply transition-all
+}
+
+.cs-mobile-sidebar li:hover > button svg{
+  --cs-dark-color: var(--cs-white-color);
+}
+
+.cs-mobile-sidebar li.active > button svg{
+  fill: var(--cs-white-color);
+  @apply rotate-180
+}
+
+.cs-mobile-sidebar .sub-menu {
+  border-color: var(--cs-primary-color);
+  @apply hidden border-l-4;
+}
+
+.cs-header-btns {
+  @apply ml-auto items-center gap-5 md:flex hidden;
+}
+
+.cs-header-btns a {
+  @apply px-5 py-1.5 md:py-2.5;
+}
+
+.cs-btn {
+  color: var(--cs-dark-color) !important;
+  border: 2px solid var(--cs-dark-color);
+  @apply bg-[var(--cs-primary-color)];
+}
+
+.cs-site-footer {
+  background-color: var(--cs-white-color);
+  @apply px-2.5 pt-20;
+}
+
+.cs-footer-widgets-container {
+  @apply flex flex-wrap lg:flex-nowrap justify-center gap-10;
+}
+
+.cs-footer-widget:first-child {
+  @apply w-full lg:w-[320px] text-center lg:text-start;
+}
+
+.cs-footer-widget:first-child form {
+  @apply max-w-[500px] lg:w-full mx-auto;
+}
+
+.cs-footer-widget {
+  @apply w-full md:w-[28%] lg:w-[320px] mx-auto text-center md:text-start;
+}
+
+.cs-footer-widget h3 {
+  @apply text-xl md:text-2xl font-semibold mb-2.5;
+}
+
+.cs-footer-widget ul {
+  list-style: none;
+}
+
+.cs-footer-widget li {
+  @apply mb-2.5;
+}
+
+.cs-footer-widget h2 {
+  @apply text-3xl md:text-4xl mb-10;
+}
+
+.cs-footer-widget form {
+  @apply flex items-center border-b;
+}
+
+.cs-footer-widget input {
+  @apply border-none outline-none text-base w-full;
+}
+
+.cs-footer-widget address {
+  font-style: normal;
+  @apply text-xl md:text-2xl;
+}
+
+.cs-social ul {
+  @apply flex items-center md:justify-start justify-center gap-5 mt-5;
+}
+
+.cs-social a * {
+  @apply transition-all;
+}
+
+.cs-social a:hover {
+  --cs-dark-color: var(--cs-primary-color);
+}
+
+.cs-footer-bottom{
+  background-color: var(--cs-primary-color);
+  @apply px-2.5 py-3 -mx-2.5 mt-10
+}
+
+.cs-footer-bottom-content{
+  @apply flex items-center md:justify-between justify-center flex-wrap gap-5 text-center
+}
+
+.cs-copyright strong{
+  @apply font-normal
+}
+
+.cs-footer-nav ul{
+  @apply list-none flex items-center flex-wrap justify-center gap-2.5
+}
+
+.cs-footer-nav a{
+  @apply text-base underline hover:no-underline
+}
+
+.cs-footer-nav a:hover{
+  color: var(--cs-dark-color) !important;
+}

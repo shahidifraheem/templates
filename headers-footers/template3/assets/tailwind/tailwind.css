@@ -1,0 +1,317 @@
+@import "tailwindcss/theme";
+@import "tailwindcss/utilities";
+
+:root {
+  --cs-primary-color: #696fc7;
+  --cs-secondary-color: #a7aae1;
+  --cs-white-color: #ffffff;
+  --cs-dark-color: #000000;
+  --cs-text-color: #727272;
+}
+
+.cs-site-header {
+  @apply px-2.5 py-2.5 md:py-5 fixed top-0 left-0 right-0 transition-all;
+}
+
+.cs-site-header.active {
+  background-color: rgba(255, 255, 255, 0.4);
+  @apply shadow-lg;
+}
+
+.cs-site-header *,
+.cs-site-footer *,
+.cs-mobile-sidebar * {
+  font-family: "Rubik", sans-serif;
+}
+
+.cs-site-footer h2,
+.cs-site-footer h3 {
+  font-family: "Playfair Display", sans-serif;
+}
+
+.cs-site-header button,
+.cs-site-footer button,
+.cs-mobile-sidebar button {
+  @apply bg-transparent outline-none border-none cursor-pointer;
+}
+
+.cs-site-header p,
+.cs-site-footer p {
+  color: var(--cs-text-color);
+}
+
+.cs-site-header a,
+.cs-site-footer a,
+.cs-mobile-sidebar a {
+  color: var(--cs-dark-color);
+  @apply block font-normal no-underline text-lg hover:text-[var(--cs-primary-color)] transition;
+}
+
+.cs-wrapper {
+  @apply w-full max-w-[1400px] mx-auto;
+}
+
+.cs-wrapper-content {
+  @apply flex items-center justify-between gap-10;
+}
+
+.cs-logo img {
+  @apply block max-w-full lg:mx-0 mx-auto;
+}
+
+.cs-navbar {
+  background-color: var(--cs-white-color);
+  @apply rounded-full py-3 px-6 lg:block hidden shadow-lg;
+}
+
+.active .cs-navbar {
+  @apply shadow-none;
+}
+
+.cs-toggle-sidebar {
+  @apply ml-auto block lg:hidden;
+}
+
+.cs-navbar ul {
+  @apply list-none;
+}
+
+.cs-navbar > ul {
+  @apply flex items-center gap-5;
+}
+
+.cs-navbar a {
+  @apply block grow;
+}
+
+.cs-navbar li.active > a {
+  color: var(--cs-primary-color);
+}
+
+.cs-navbar li {
+  @apply relative flex items-center justify-between;
+}
+
+.cs-navbar li:hover > a{
+  color: var(--cs-primary-color);
+}
+
+.cs-navbar button{
+  @apply flex justify-center items-center 
+}
+
+.cs-navbar li svg{
+  @apply w-6 h-6 mr-2 
+}
+
+.sub-menu li svg{
+  @apply -rotate-90
+}
+
+.cs-navbar .sub-menu {
+  background-color: var(--cs-white-color);
+  @apply absolute top-10 left-0 w-56 invisible opacity-0 transition-all shadow-lg rounded-2xl;
+}
+
+.cs-navbar .sub-menu .sub-menu {
+  @apply left-full top-0;
+}
+
+.cs-navbar li:hover > .sub-menu {
+  @apply visible opacity-100;
+}
+
+.cs-navbar .sub-menu a {
+  @apply px-5 py-2.5;
+}
+
+.cs-navbar .sub-menu a:after {
+  @apply hidden;
+}
+
+.cs-mobile-sidebar {
+  background-color: rgba(0, 0, 0, 0.5);
+  @apply -translate-x-full fixed top-0 left-0 bottom-0 right-0 z-50 w-full transition-all duration-300;
+}
+
+.cs-mobile-sidebar.active {
+  @apply translate-x-0;
+}
+
+.cs-sidebar-wrapper {
+  background-color: var(--cs-white-color);
+  @apply absolute top-0 left-0 bottom-0 z-50 w-[300px] overflow-x-hidden overflow-y-auto;
+}
+
+.cs-sidebar-close {
+  background-color: var(--cs-primary-color) !important;
+  @apply absolute top-0 left-[300px] py-2 px-2.5  z-10;
+}
+
+.cs-sidebar-logo {
+  @apply px-2.5 py-5;
+}
+
+.cs-sidebar-logo img {
+  @apply h-24 object-contain object-left;
+}
+
+.cs-sidebar-nav a {
+  @apply px-5 py-2.5 w-[260px];
+}
+
+.cs-sidebar-nav li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  @apply relative;
+}
+
+.cs-sidebar-nav button {
+  @apply absolute top-0 right-0 z-10 w-10 h-12 flex justify-center items-center transition-all;
+}
+
+.cs-mobile-sidebar li:hover > a,
+.cs-mobile-sidebar li.active > a {
+  background-color: var(--cs-primary-color);
+  color: var(--cs-white-color);
+}
+
+.cs-mobile-sidebar li button svg {
+  @apply transition-all;
+}
+
+.cs-mobile-sidebar li:hover > button svg {
+  --cs-dark-color: var(--cs-white-color);
+}
+
+.cs-mobile-sidebar li.active > button svg {
+  fill: var(--cs-white-color);
+  @apply rotate-180;
+}
+
+.cs-mobile-sidebar .sub-menu {
+  border-color: var(--cs-primary-color);
+  @apply hidden border-l-4;
+}
+
+.cs-header-btns {
+  @apply md:block hidden;
+}
+
+.cs-header-btns a {
+  @apply px-5 py-1.5 md:py-2.5;
+}
+
+.cs-btn {
+  color: var(--cs-white-color) !important;
+  @apply bg-[var(--cs-primary-color)] rounded-full;
+}
+
+.cs-site-footer {
+  @apply px-2.5 pt-10 md:pt-20;
+}
+
+.cs-footer-wrapper {
+  background-color: var(--cs-white-color);
+  @apply max-w-[1400px] p-8 md:p-14 lg:p-20 rounded-2xl mx-auto;
+}
+
+.cs-footer-widgets-container {
+  @apply flex flex-wrap lg:flex-nowrap justify-center gap-6 md:gap-10 lg:gap-28;
+}
+
+.cs-footer-widget:first-child {
+  @apply w-full lg:w-[500px] mr-auto;
+}
+
+.cs-footer-widget form {
+  @apply max-w-[500px] lg:w-full mx-auto flex items-center border-b focus-within:border-[var(--cs-primary-color)];
+}
+
+.cs-footer-widget form button{
+  background-color: var(--cs-primary-color);
+  --cs-dark-color: var(--cs-white-color);
+  @apply h-12 w-13 rounded-full flex items-center justify-center mb-1
+}
+
+.cs-footer-widget form button:active, .cs-footer-widget form button:hover{
+  background-color: var(--cs-secondary-color);
+}
+
+.cs-footer-widget {
+  @apply w-full md:w-[27%] lg:w-fit mx-auto md:mx-0 text-center lg:text-start;
+}
+
+.cs-footer-widget h3 {
+  @apply text-xl font-semibold mb-2.5;
+}
+
+.cs-footer-widget ul {
+  list-style: none;
+}
+
+.cs-footer-widget li {
+  @apply mb-2.5;
+}
+
+.cs-footer-widget h2 {
+  @apply text-3xl md:text-4xl lg:text-5xl my-5;
+}
+
+.cs-footer-widget input {
+  @apply border-none outline-none text-base w-full;
+}
+
+.cs-go-top {
+  background-color: var(--cs-primary-color) !important;
+  display: flex !important;
+  @apply w-12 h-12 items-center justify-center rounded-full fixed right-5 bottom-5 shadow-2xl;
+}
+
+.cs-footer-middle{
+  background-color: var(--cs-dark-color);
+  @apply py-2.5 px-5 rounded-full mt-10 shadow-2xl hidden md:block
+}
+
+.cs-social ul {
+  @apply flex items-center lg:justify-start justify-center gap-5 list-none;
+}
+
+.cs-social a * {
+  @apply transition-all;
+}
+
+.cs-social a {
+  --cs-primary-color: var(--cs-white-color);
+  @apply h-8 w-8 flex items-center justify-center border border-[var(--cs-text-color)] rounded-full;
+}
+
+.cs-social a:hover {
+  background-color: var(--cs-secondary-color) !important;
+}
+
+.cs-footer-bottom {
+  background-color: var(--cs-primary-color);
+  @apply p-2.5 -mx-2.5 mt-10 relative;
+}
+
+.cs-footer-bottom-content {
+  @apply flex items-center md:justify-between justify-center flex-wrap gap-5 text-center;
+}
+
+.cs-copyright strong {
+  color: var(--cs-white-color);
+  @apply font-normal;
+}
+
+.cs-footer-nav ul {
+  @apply list-none flex items-center flex-wrap justify-center gap-2.5;
+}
+
+.cs-footer-nav a {
+  color: var(--cs-white-color);
+  @apply text-base underline hover:no-underline;
+}
+
+.cs-footer-nav a:hover {
+  color: var(--cs-dark-color) !important;
+}
