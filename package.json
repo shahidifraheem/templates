@@ -8,6 +8,8 @@
     "hf-template2" : "npx @tailwindcss/cli -i ./headers-footers/template2/assets/tailwind/tailwind.css -o ./headers-footers/template2/assets/css/style.css --watch",
     "hf-template3" : "npx @tailwindcss/cli -i ./headers-footers/template3/assets/tailwind/tailwind.css -o ./headers-footers/template3/assets/css/style.css --watch",
     "hf-template4" : "npx @tailwindcss/cli -i ./headers-footers/template4/assets/tailwind/tailwind.css -o ./headers-footers/template4/assets/css/style.css --watch",
-    "hf-template5" : "npx @tailwindcss/cli -i ./headers-footers/template5/assets/tailwind/tailwind.css -o ./headers-footers/template5/assets/css/style.css --watch"
+    "hf-template5" : "npx @tailwindcss/cli -i ./headers-footers/template5/assets/tailwind/tailwind.css -o ./headers-footers/template5/assets/css/style.css --watch",
+    "hf-template6" : "npx @tailwindcss/cli -i ./headers-footers/template6/assets/tailwind/tailwind.css -o ./headers-footers/template6/assets/css/style.css --watch",
+    "hf-template7" : "npx @tailwindcss/cli -i ./headers-footers/template7/assets/tailwind/tailwind.css -o ./headers-footers/template7/assets/css/style.css --watch"
   }
 }
