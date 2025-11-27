@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Under Maintenance</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .cs-maintenance-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px;
+            padding-top: 100px;
+            min-height: 100vh;
+            gap: 40px;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .cs-logo {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            right: 25px;
+            text-align: center;
+            font-size: 30px;
+            text-transform: uppercase;
+            color: #222;
+            z-index: 1;
+        }
+
+        /* LEFT CONTENT */
+        .cs-content-left {
+            flex: 1;
+            max-width: 550px;
+        }
+
+        .cs-title {
+            font-size: 48px;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        .cs-subtitle {
+            font-size: 22px;
+            font-weight: 500;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .cs-description {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        /* FORM */
+        .cs-notify-form {
+            display: flex;
+            gap: 10px;
+        }
+
+        .cs-notify-form input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .cs-notify-form input:focus {
+            border-color: #fcbc04;
+        }
+
+        .cs-notify-form button {
+            padding: 14px 28px;
+            background: #fcbc04;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 180px;
+        }
+
+        .cs-notify-form button:hover {
+            background: #222;
+        }
+
+        /* RIGHT IMAGE */
+        .cs-content-right img {
+            width: 400px;
+            max-width: 100%;
+            animation: floatIcon 3s ease-in-out infinite;
+        }
+
+        @keyframes floatIcon {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* RESPONSIVE */
+        @media(max-width: 900px) {
+            .cs-maintenance-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .cs-notify-form {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cs-content-right{
+                order: -1;
+            }
+
+            .cs-content-right img {
+                width: 260px;
+                margin-top: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="cs-maintenance-container">
+
+        <div class="cs-logo">
+            <h2>Logo</h2>
+        </div>
+
+        <!-- Left Section -->
+        <div class="cs-content-left">
+            <h1 class="cs-title">We’ll Be Back Soon</h1>
+            <h3 class="cs-subtitle">Our Website is Under Maintenance</h3>
+
+            <p class="cs-description">
+                We’re currently improving our website to give you a better experience.
+                Enter your email below and we’ll notify you when everything is back online.
+            </p>
+
+            <form class="cs-notify-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Notify Me</button>
+            </form>
+        </div>
+
+        <!-- Right Section -->
+        <div class="cs-content-right">
+            <img src="./warning.png" alt="Maintenance Icon">
+        </div>
+
+    </div>
+
+</body>
+
+</html>

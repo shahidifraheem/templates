@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Under Maintenance</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .cs-maintenance-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px;
+            padding-top: 100px;
+            min-height: 100vh;
+            gap: 40px;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .cs-logo {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            right: 25px;
+            text-align: center;
+            font-size: 30px;
+            text-transform: uppercase;
+            color: #222;
+            z-index: 1;
+        }
+
+        .cs-logo span{
+            color: #f7ef2d;
+        }
+
+        /* LEFT CONTENT */
+        .cs-content-left {
+            flex: 1;
+            max-width: 550px;
+        }
+
+        .cs-title {
+            font-size: 48px;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        .cs-subtitle {
+            font-size: 22px;
+            font-weight: 500;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .cs-description {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+
+        /* Countdown */
+        .cs-countdown {
+            display: flex;
+            justify-content: start;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .cs-time-box {
+            text-align: center;
+        }
+
+        .cs-time-box span {
+            display: block;
+            font-size: 40px;
+            font-weight: 700;
+            color: #f7ef2d;
+        }
+
+        .cs-time-box small {
+            font-size: 14px;
+            color: #333;
+        }
+
+        /* RIGHT IMAGE */
+        .cs-content-right img {
+            width: 600px;
+            max-width: 100%;
+            animation: floatIcon 3s ease-in-out infinite;
+        }
+
+        @keyframes floatIcon {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* RESPONSIVE */
+        @media(max-width: 900px) {
+            .cs-maintenance-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .cs-countdown {
+                gap: 15px;
+                justify-content: center;
+            }
+
+            .cs-time-box span {
+                font-size: 28px;
+            }
+
+            .cs-content-right {
+                order: -1;
+            }
+
+            .cs-content-right img {
+                width: 300px;
+                margin-top: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="cs-maintenance-container">
+
+        <div class="cs-logo">
+            <h2>Lo<span>g</span>o<span>.</span></h2>
+        </div>
+
+        <!-- Left Section -->
+        <div class="cs-content-left">
+            <h1 class="cs-title">We’ll Be Back Soon</h1>
+            <h3 class="cs-subtitle">Our Website is Under Maintenance</h3>
+
+            <p class="cs-description">
+                We’re currently improving our website to give you a better experience.
+                Enter your email below and we’ll notify you when everything is back online.
+            </p>
+
+            <!-- Countdown -->
+            <div class="cs-countdown">
+                <div class="cs-time-box">
+                    <span id="days">00</span>
+                    <small>Days</small>
+                </div>
+                <div class="cs-time-box">
+                    <span id="hours">00</span>
+                    <small>Hours</small>
+                </div>
+                <div class="cs-time-box">
+                    <span id="minutes">00</span>
+                    <small>Minutes</small>
+                </div>
+                <div class="cs-time-box">
+                    <span id="seconds">00</span>
+                    <small>Seconds</small>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Right Section -->
+        <div class="cs-content-right">
+            <img src="./under-construction-icon.png" alt="Maintenance Icon">
+        </div>
+
+    </div>
+
+    <script>
+        // Countdown Timer
+        const targetDate = new Date("Dec 31, 2025 23:59:59").getTime();
+
+        setInterval(() => {
+            const now = new Date().getTime();
+            const diff = targetDate - now;
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+
+            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+        }, 1000);
+    </script>
+
+</body>
+
+</html>

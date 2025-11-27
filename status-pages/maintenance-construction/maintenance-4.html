@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Under Maintenance</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .cs-maintenance-container {
+            padding: 30px;
+            padding-top: 100px;
+            gap: 40px;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .cs-logo {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            right: 25px;
+            text-align: center;
+            font-size: 30px;
+            text-transform: uppercase;
+            color: #222;
+            z-index: 1;
+        }
+
+        .cs-logo span {
+            color: #fcbc04;
+        }
+
+
+        .cs-title {
+            font-size: 48px;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        .cs-subtitle {
+            font-size: 22px;
+            font-weight: 500;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .cs-description {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+
+        /* Countdown */
+        .cs-countdown {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .cs-time-box {
+            text-align: center;
+            width: 110px;
+            height: 110px;
+            padding: 10px;
+            border-radius: 100px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cs-time-box span {
+            display: block;
+            font-size: 40px;
+            font-weight: 700;
+            color: #fcbc04;
+        }
+
+        .cs-time-box small {
+            font-size: 14px;
+            color: #333;
+        }
+
+        .cs-btn {
+            display: inline-block;
+            text-decoration: none;
+            padding: 14px 28px;
+            background: #fcbc04;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 180px;
+        }
+
+        .cs-btn:hover {
+            background: #222;
+        }
+
+        /* RESPONSIVE */
+        @media(max-width: 768px) {
+            .cs-title{
+                font-size: 30px;
+            }
+
+            .cs-countdown {
+                gap: 15px;
+                justify-content: center;
+            }
+
+            .cs-time-box span {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="cs-maintenance-container">
+
+        <div class="cs-logo">
+            <h2>Lo<span>g</span>o<span>.</span></h2>
+        </div>
+
+        <h1 class="cs-title">We’ll Be Back Soon</h1>
+        <h3 class="cs-subtitle">Our Website is Under Maintenance</h3>
+
+        <p class="cs-description">
+            We’re currently improving our website to give you a better experience.
+            Enter your email below and we’ll notify you when everything is back online.
+        </p>
+
+        <!-- Countdown -->
+        <div class="cs-countdown">
+            <div class="cs-time-box">
+                <span id="days">00</span>
+                <small>Days</small>
+            </div>
+            <div class="cs-time-box">
+                <span id="hours">00</span>
+                <small>Hours</small>
+            </div>
+            <div class="cs-time-box">
+                <span id="minutes">00</span>
+                <small>Minutes</small>
+            </div>
+            <div class="cs-time-box">
+                <span id="seconds">00</span>
+                <small>Seconds</small>
+            </div>
+        </div>
+
+        <a href="mailto:example@domain.com" class="cs-btn">Email Us</a>
+
+    </div>
+
+    <script>
+        // Countdown Timer
+        const targetDate = new Date("Dec 31, 2025 23:59:59").getTime();
+
+        setInterval(() => {
+            const now = new Date().getTime();
+            const diff = targetDate - now;
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+
+            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+        }, 1000);
+    </script>
+
+</body>
+
+</html>

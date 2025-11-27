@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>404 - Not Found</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #eef2f3, #dfe9f3);
+            padding: 20px;
+        }
+
+        .cs-404-wrapper {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(12px);
+            padding: 40px;
+            width: 100%;
+            max-width: 550px;
+            text-align: center;
+            border-radius: 16px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+            animation: fadeUp 0.8s ease forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .cs-404-content h1 {
+            font-size: 150px;
+            color: #222;
+            font-weight: 800;
+            margin-bottom: 10px;
+            letter-spacing: -5px;
+            line-height: 1;
+        }
+
+        .cs-404-content h1 span {
+            color: #ff9a3b;
+        }
+
+        .cs-404-content p {
+            font-size: 16px;
+            color: #444;
+            line-height: 1.7;
+            margin-bottom: 35px;
+            padding: 0 10px;
+        }
+
+        .cs-search {
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            background: white;
+            border-radius: 50px;
+            padding: 5px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+        }
+
+        .cs-search input {
+            width: 100%;
+            border: none;
+            font-size: 16px;
+            padding: 12px 18px;
+            border-radius: 50px;
+            outline: none;
+            color: #333;
+        }
+
+        .cs-search button {
+            border: none;
+            background: #fff;
+            border-radius: 50%;
+            width: 55px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .cs-search button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+        }
+
+        .cs-search svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .cs-btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 14px 32px;
+            background: black;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: 0.3s ease;
+        }
+
+        .cs-btn:hover {
+            opacity: 0.85;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 480px) {
+            .cs-404-wrapper{
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .cs-404-content h1 {
+                font-size: 110px;
+            }
+
+            .cs-search input {
+                font-size: 14px;
+            }
+
+            .cs-search button {
+                width: 48px;
+                height: 48px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cs-404-wrapper">
+        <div class="cs-404-content">
+            <h1>4<span>0</span>4</h1>
+            <p>
+                The page you’re looking for doesn’t exist or may have been moved.
+                Don't worry — let's get you back on track.
+            </p>
+            <form action="#" class="cs-search">
+                <input type="text" placeholder="Search...">
+                <button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewBox="0 0 24 24" fill="none">
+                        <path
+                            d="M16.6725 16.6412L21 21M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z"
+                            stroke="#ff9a3b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

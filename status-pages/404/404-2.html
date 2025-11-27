@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>404 - Not Found</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #eef2f3, #dfe9f3);
+        }
+
+        .cs-404-wrapper {
+            padding: 20px;
+            width: 100%;
+            max-width: 768px;
+            text-align: center;
+        }
+
+        @keyframes fadeUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .cs-404-content h1 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 18px;
+            font-weight: 600;
+        }
+
+        .cs-404-content p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .cs-btn {
+            display: inline-block;
+            padding: 14px 32px;
+            color: #0c0c0c;
+            background: linear-gradient(135deg, #eef2f3, #dfe9f3);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        }
+
+        .cs-btn:hover {
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cs-404-wrapper">
+        <div class="cs-404-content">
+            <div class="cs-404-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="200px" height="200px" viewBox="0 0 400 400" fill="none">
+                    <path d="M158.883 171.858C157.302 163.63 157.661 155.331 157.661 147.001" stroke="#000000"
+                        stroke-opacity="0.9" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M243.182 168.082C244.769 160.655 243.182 152.692 243.182 145" stroke="#000000"
+                        stroke-opacity="0.9" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M149 263C175.051 221.917 226.044 220.551 255 257.987" stroke="#000000" stroke-opacity="0.9"
+                        stroke-width="16" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+            <h1>404 - Page Not Found</h1>
+            <p>
+                Uh-oh! We can’t seem to find the page you were looking for. Try going back or explore our homepage.
+            </p>
+            <a href="/" class="cs-btn">Return to Homepage</a>
+        </div>
+
+    </div>
+</body>
+
+</html>

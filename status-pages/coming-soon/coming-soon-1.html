@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coming Soon Page Template</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: linear-gradient(135deg, #eef2f3, #dfe9f3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .cs-logo {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            text-transform: uppercase;
+        }
+
+        .cs-coming-wrapper {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(12px);
+            padding: 50px 40px;
+            width: 100%;
+            max-width: 650px;
+            text-align: center;
+            border-radius: 18px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+            animation: fadeUp 0.8s ease forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 35px;
+        }
+
+        /* Countdown */
+        .cs-countdown {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .cs-time-box {
+            text-align: center;
+        }
+
+        .cs-time-box span {
+            display: block;
+            font-size: 40px;
+            font-weight: 700;
+            color: #000;
+        }
+
+        .cs-time-box small {
+            font-size: 14px;
+            color: #333;
+        }
+
+        /* Email input */
+        .cs-subscribe {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .cs-subscribe input {
+            padding: 14px 18px;
+            font-size: 16px;
+            width: 70%;
+            border: none;
+            border-radius: 8px;
+            outline: none;
+            background: #fff;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+        }
+
+        .cs-subscribe button {
+            padding: 14px 24px;
+            font-size: 16px;
+            background: #111;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: 0.3s ease;
+        }
+
+        .cs-subscribe button:hover {
+            opacity: 0.85;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 640px) {
+            .cs-logo{
+                text-align: center;
+                right: 20px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            .cs-countdown {
+                gap: 15px;
+            }
+
+            .cs-time-box span {
+                font-size: 28px;
+            }
+
+            .cs-subscribe {
+                flex-wrap: wrap;
+            }
+
+            .cs-subscribe input {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="cs-logo">
+        <h2>Logo</h2>
+    </div>
+
+    <div class="cs-coming-wrapper">
+        <h1>Coming Soon</h1>
+        <p>We're working hard to give you the best experience. Stay tuned!</p>
+
+        <!-- Countdown -->
+        <div class="cs-countdown">
+            <div class="cs-time-box">
+                <span id="days">00</span>
+                <small>Days</small>
+            </div>
+            <div class="cs-time-box">
+                <span id="hours">00</span>
+                <small>Hours</small>
+            </div>
+            <div class="cs-time-box">
+                <span id="minutes">00</span>
+                <small>Minutes</small>
+            </div>
+            <div class="cs-time-box">
+                <span id="seconds">00</span>
+                <small>Seconds</small>
+            </div>
+        </div>
+
+        <!-- Email subscribe -->
+        <form class="cs-subscribe">
+            <input type="email" placeholder="Enter your email..." required>
+            <button type="submit">Notify Me</button>
+        </form>
+    </div>
+
+    <script>
+        // Countdown Timer
+        const targetDate = new Date("Dec 31, 2025 23:59:59").getTime();
+
+        setInterval(() => {
+            const now = new Date().getTime();
+            const diff = targetDate - now;
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+
+            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+        }, 1000);
+    </script>
+
+</body>
+
+</html>
