@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Testimonials</title>
+</head>
+
+<body>
+    <!-- HTML -->
+    <section class="testimonial-grid">
+        <h2>Happy Customers</h2>
+        <div class="grid">
+            <div class="card">
+                <p>"Fantastic experience!"</p>
+                <h4>- Alice</h4>
+            </div>
+            <div class="card">
+                <p>"Loved the professionalism."</p>
+                <h4>- Bob</h4>
+            </div>
+            <div class="card">
+                <p>"Will definitely come back."</p>
+                <h4>- Clara</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- CSS -->
+    <style>
+        .testimonial-grid {
+            width: 80%;
+            margin: 50px auto;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .grid {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: #fff;
+            padding: 20px;
+            width: 250px;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+
+</body>
+
+</html>
